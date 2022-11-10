@@ -48,4 +48,10 @@ export class UsersService {
 
     }
 
+    async getUserByEmail(email: string): Promise<Users> {
+        const user = await this.usersModel.findOne({email: email});
+
+        return user
+    }
+
 }
